@@ -55,7 +55,7 @@ if (!isset($config_fields['ATTRIBUTE_DISPLAY_AVAILABLE_CATEGORIES_EDIT'])) {
 				<?php foreach ($categories as $handle => $name): ?>
 				<label class="checkbox">
 					<?php echo $form->checkbox(
-					$field_name, // form name/id
+					$field_name . '[]', // form name/id
 					$handle, // value
 					in_array($handle, $field_options)); // is checked
 					?>
@@ -65,14 +65,14 @@ if (!isset($config_fields['ATTRIBUTE_DISPLAY_AVAILABLE_CATEGORIES_EDIT'])) {
 			</div>
 		</div>
 
-		<?php if ($form_action): ?>
-		<div class="form-actions">
-			<?php echo $form->submit('save', t('Save Settings'), array('class' => 'btn-primary')); ?>
-		</div>
-		<?php endif; ?>
-
 	</fieldset>
 	<?php endforeach; ?>
+
+	<?php if ($form_action): ?>
+	<div class="form-actions">
+		<?php echo $form->submit('save', t('Save Settings'), array('class' => 'btn-primary')); ?>
+	</div>
+	<?php endif; ?>
 
 
 	<?php if ($form_action): ?></form><?php else: ?></div><?php endif; ?>

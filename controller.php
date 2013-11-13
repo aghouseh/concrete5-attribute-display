@@ -53,6 +53,7 @@ class AttributeDisplayPackage extends Package {
 	 * @return Array
 	 */
 	public function getCategoriesArray() {
+		$text = Loader::helper('text');
 		$categories = array();
 		foreach (AttributeKeyCategory::getList() as $category) {
 			$handle = $category->getAttributeKeyCategoryHandle();
